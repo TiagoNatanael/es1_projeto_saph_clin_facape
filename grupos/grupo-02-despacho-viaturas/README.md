@@ -59,7 +59,7 @@ O módulo de **Despacho Operacional** elimina o atraso e a falha de comunicaçã
 ## 4. Estado Atual dos Artefatos
 - [x] **E1** · Visão e Escopo do Módulo (`README.md`)
 - [x] **E2** · Catálogo de Requisitos — 8 RF e 5 RNF (`README.md`)
-- [ ] **E3** · Diagrama de Casos de Uso e Especificações Textuais (`casos-de-uso/`, `diagramas/`)
+- [x] **E3** · Diagrama de Casos de Uso e Especificações Textuais (`casos-de-uso/`, `diagramas/`)
 - [ ] **E4** · Diagrama de Classes de Domínio e Dicionário de Dados (`diagramas/`)
 - [ ] **E5** · Diagramas de Sequência, Máquina de Estados e Atividades (`diagramas/`)
 - [ ] **E6** · ADRs, Matriz de Rastreabilidade e Casos de Teste (`adr/`, `matriz-rastreabilidade.md`, `testes/`)
