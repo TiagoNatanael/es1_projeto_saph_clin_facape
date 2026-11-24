@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Médico Regulador" as Medico
+actor "Equipe de Intervenção" as Equipe
+actor "Módulo G1\n(Triagem)" as G1 <<Sistema>>
+actor "Módulo G3\n(Telemedicina)" as G3 <<Sistema>>
+actor "Módulo G6\n(Auditoria)" as G6 <<Sistema>>
+
+rectangle "Módulo G2 · Despacho e Frota de Viaturas" {
+  usecase "UC-G02-01\nDespachar Viatura" as UC01
+  usecase "UC-G02-02\nAcionar Suporte Avançado" as UC02
+  usecase "UC-G02-03\nEncerrar Atendimento" as UC03
+  usecase "UC-G02-04\nSinalizar Indisponibilidade\nda Viatura" as UC04
+  usecase "UC-G02-05\nVerificar Disponibilidade\nde Equipe" as UC05
+  usecase "UC-G02-06\nRecepcionar Chamado\nClassificado" as UC06
+}
+
+' Associações dos Atores Primários
+Medico --> UC01
+Medico --> UC02
+Medico --> UC04
+
+Equipe --> UC02
+Equipe --> UC03
+Equipe --> UC04
+
+' Associações dos Sistemas Externos (Contratos C1, C2 e C5)
+G1 --> UC06
+UC01 --> G3
+UC02 --> G3
+UC01 --> G6
+UC02 --> G6
+UC03 --> G6
+
+' Relacionamentos obrigatórios (<<include>> e <<extend>>)
+UC01 .> UC05 : <<include>>
+UC02 .> UC05 : <<include>>
+UC02 .> UC01 : <<extend>>
+
+@enduml
